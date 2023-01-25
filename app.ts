@@ -1,2 +1,5 @@
-const character = "aaa";
-console.log(character);
+const world = "world";
+
+export function hello(who: string = world): string {
+  return `Hello ${who}! `;
+}
