@@ -1,4 +1,11 @@
 "use strict";
-let sales = 123456789;
-console.log(sales);
+let employee = {
+    id: 5,
+    name: "Hajar",
+    retire: (date) => {
+        console.log(date);
+    },
+};
+employee.name = "Nigar";
+console.log(employee);
 //# sourceMappingURL=app.js.map
