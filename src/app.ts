@@ -26,22 +26,22 @@
 //   Large = 3,
 // }
 
-// const enum Size {
-//   Small = "s",
-//   Medium = "m",
-//   Large = "l",
-// }
+const enum Size {
+  Small = "s",
+  Medium = "m",
+  Large = "l",
+}
 
 // let mySize: Size = Size.Medium;
 // console.log(mySize);
 
-// function sumOfNums(a: number, b: number): number {
-//   //   let c; --> no uned locals
-//   return a + b;
-//   //   return a + b; --> no unused parameters
-// }
+function sumOfNums(a: number, b: number): number {
+    // let c; --> no uned locals
+  return a + b;
+  // return a ; //--> no unused parameters
+}
 
-// let sum = sumOfNums(3_5, 5); //35+5
+let sum = sumOfNums(3_5, 5); //35+5
 // console.log(sum);
 
 // function calculateTax(income: number, taxYear = 2022): number {

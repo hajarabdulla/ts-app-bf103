@@ -1,4 +1,8 @@
 "use strict";
+function sumOfNums(a, b) {
+    return a + b;
+}
+let sum = sumOfNums(35, 5);
 let employee = {
     id: 5,
     name: "Hajar",
