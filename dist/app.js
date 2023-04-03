@@ -1,15 +1,11 @@
 "use strict";
-function sumOfNums(a, b) {
-    return a + b;
+function getInfo(person) {
+    return `${person.firstName} ${person.lastName}`;
 }
-let sum = sumOfNums(35, 5);
-let employee = {
-    id: 5,
+const user = {
+    id: 1,
     name: "Hajar",
-    retire: (date) => {
-        console.log(date);
-    },
+    age: 21,
+    role: "super-admin",
 };
-employee.name = "Nigar";
-console.log(employee);
 //# sourceMappingURL=app.js.map

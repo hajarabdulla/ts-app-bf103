@@ -1,3 +1,4 @@
+//! Primitive Types
 // let age: number = 20;
 // if (age > 50) {
 //   age += 10;
@@ -8,6 +9,7 @@
 // let sales: string = "123_456_789";
 // console.log(sales);
 
+//! Arrays
 // let arr: number[] = [1, 2, 6];
 // let arr: number[] = [];
 // arr[0] = 1;
@@ -26,22 +28,23 @@
 //   Large = 3,
 // }
 
-const enum Size {
-  Small = "s",
-  Medium = "m",
-  Large = "l",
-}
+// const enum Size {
+//   Small = "s",
+//   Medium = "m",
+//   Large = "l",
+// }
 
 // let mySize: Size = Size.Medium;
 // console.log(mySize);
 
-function sumOfNums(a: number, b: number): number {
-    // let c; --> no uned locals
-  return a + b;
-  // return a ; //--> no unused parameters
-}
+//! Functions
+// function sumOfNums(a: number, b: number): number {
+//     // let c; --> no uned locals
+//   return a + b;
+//   // return a ; //--> no unused parameters
+// }
 
-let sum = sumOfNums(3_5, 5); //35+5
+// let sum = sumOfNums(3_5, 5); //35+5
 // console.log(sum);
 
 // function calculateTax(income: number, taxYear = 2022): number {
@@ -58,21 +61,79 @@ let sum = sumOfNums(3_5, 5); //35+5
 // user.id = 5;
 // console.log(user.id);
 
-let employee: {
-  readonly id: number;
-  name: string;
-  age?: number;
-  retire: (date: Date) => void;
-} = {
-  id: 5,
-  name: "Hajar",
-  retire: (date: Date) => {
-    console.log(date);
-  },
-};
+//! Objects
+// let employee: {
+//   readonly id: number;
+//   name: string;
+//   age?: number;
+//   retire: (date: Date) => void;
+// } = {
+//   id: 5,
+//   name: "Hajar",
+//   retire: (date: Date) => {
+//     console.log(date);
+//   },
+// };
 
 // employee.id = 1; // error --> id is for only reading
-employee.name = "Nigar";
+// employee.name = "Nigar";
 // employee.age=21;
 
-console.log(employee);
+// console.log(employee);
+
+//! Object types
+type PersonType = { firstName: string; lastName: string };
+
+function getInfo(person: PersonType) {
+  return `${person.firstName} ${person.lastName}`;
+}
+
+//! Interface
+// interface PersondDetail {
+//   firstName: string;
+//   lastName?: string;
+//   // age: number | undefined; //this is not what wee want
+// }
+
+// function getDetail(person: PersondDetail) {
+//   return `${person.firstName}`;
+// }
+
+// console.log(getDetail({ firstName: "Hajar" }));
+
+//! Union Types
+// type StuffUnions = string | number | boolean;
+
+//// const makeSomeStuff = (val: string | number | boolean): number => {
+// const makeStuffUnion = (val: StuffUnions): number => {
+//   if (typeof val === "number") return val + 10;
+
+//   if (typeof val === "boolean") {
+//     if (val) return 1;
+//     return 0;
+//   }
+
+//   return val.length;
+// };
+
+// console.log(makeSomeStuff(5));
+// console.log(makeSomeStuff("Hajar"));
+// console.log(makeSomeStuff(false)); //return 0
+// console.log(makeSomeStuff("false")); //return 5
+// console.log(makeSomeStuff("5")); //return 1
+
+type User = {
+  id: number;
+  name: string;
+  age: number;
+  // role: string;
+  role: "admin" | "user" | "super-admin";
+};
+
+//! Role must be either admin or user or super-admin
+const user: User = {
+  id: 1,
+  name: "Hajar",
+  age: 21,
+  role: "super-admin",
+};
