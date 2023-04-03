@@ -122,18 +122,19 @@ function getInfo(person: PersonType) {
 // console.log(makeSomeStuff("false")); //return 5
 // console.log(makeSomeStuff("5")); //return 1
 
-type User = {
-  id: number;
-  name: string;
-  age: number;
-  // role: string;
-  role: "admin" | "user" | "super-admin";
-};
+//! Task 
+// type User = {
+//   id: number;
+//   name: string;
+//   age: number;
+//   // role: string;
+//   role: "admin" | "user" | "super-admin";
+// };
 
-//! Role must be either admin or user or super-admin
-const user: User = {
-  id: 1,
-  name: "Hajar",
-  age: 21,
-  role: "super-admin",
-};
+// ! Role must be either admin or user or super-admin
+// const user: User = {
+//   id: 1,
+//   name: "Hajar",
+//   age: 21,
+//   role: "super-admin",
+// };
