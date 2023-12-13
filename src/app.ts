@@ -1,24 +1,32 @@
+// number, string, boolean, undefined, null, bigInt, symbol
+// any, never, unknown, enum, tuple
+
 //! Primitive Types
 // let age: number = 20;
-// if (age > 50) {
-//   age += 10;
-// }
+// if (age > 50) age += 10;
 
-// console.log(age);
 
 // let sales: string = "123_456_789";
 // console.log(sales);
 
-//! Arrays
-// let arr: number[] = [1, 2, 6];
-// let arr: number[] = [];
-// arr[0] = 1;
-// arr[1] = 2;
+//! Array
+let numbers: number[] = [1, 2, +"3"];
 
-// // let user: [number, string] = [21, "Hajar", 5] --> error;
-// let user: [number, string] = [21, "Hajar"];
-// user.push(1);
-// console.log(user);
+const fruits: string[] = ["banana", "fig", "mango"];
+fruits[3] = "apple";
+// fruits[1] = 1;
+
+// fruits.push(1);
+
+// fruits.map((item) => item.includes("a"));
+// numbers.map((elem) => elem.toFixed(2));
+
+//! Tuple
+let arr: [number, string] = [1, "Hajar"];
+// arr[1].padEnd()
+// arr[2] = "Salam"
+// arr.push("Salam");
+// console.log(arr);
 
 //! Enums
 //* PascalCase
@@ -87,6 +95,51 @@ type PersonType = { firstName: string; lastName: string };
 function getInfo(person: PersonType) {
   return `${person.firstName} ${person.lastName}`;
 }
+
+//! Type Aliases
+type Employee = {
+  id: number;
+  name?: string;
+  retire: (date: Date) => void;
+};
+
+const obj: Employee = {
+  id: 2,
+  name: "NIgar",
+  retire: (date) => {
+    // console.log(date);
+  },
+};
+
+//! Union Types
+function inchToSm(length: number | string) {
+  if (typeof length == "number") {
+    return length * 2.54;
+  } else {
+    return parseInt(length) * 2.54;
+  }
+}
+
+console.log(inchToSm(10));
+console.log(inchToSm("10m"));
+
+//! Intersection Types (never)
+let x: number & string;
+
+type Draggable = {
+  drag: () => void;
+};
+
+type Resizable = {
+  resize: () => void;
+};
+
+type UIWidget = Draggable & Resizable;
+
+let textBox: UIWidget = {
+  drag: () => {},
+  resize: () => {},
+};
 
 //! Interface
 // interface PersondDetail {
