@@ -141,6 +141,23 @@ let textBox: UIWidget = {
   resize: () => {},
 };
 
+//! Literal
+type Quantity = 50 | 100;
+let quantity: Quantity = 100;
+
+type Metric = "cm" | "inch";
+
+//! Nullable
+function greet(name: string | null | undefined): void {
+  if (name) {
+    console.log(name.toUpperCase());
+  } else {
+    console.log("Hola");
+  }
+}
+
+greet(null);
+
 //! Interface
 // interface PersondDetail {
 //   firstName: string;
